@@ -102,3 +102,47 @@ Bu directory de ls dediğimizde default dosyası sanırım silinmiş olmalı ve 
      You need to connect sonar db and run the query above. After that you will be seeing output as "UPDATE"
 
      After that go to Sonarqube GUI and try to login via admin/admin, it will ask you to change the initial password
+     
+     
+5) After logining Sonarqube Web GUI successfully, we need to change the password and we need to connect our Sonarqube to Gitlab projects. To do that, we need to integrate our Sonarqube to Gitlab Pipelines. The way to connect Sonar to our Gitlab projects, we need to click "Create new project" button on Sonarqube GUI. Then we need to follow each steps as below. The list of our Gitlab projects should be included in Sonarqube WebGUI. Please make this setup first.
+
+6) To connect Sonar to our Gitlab projects, first we need to update our pom xml as below. If the properties block already there, please just add the sonar line into the properties block. See pom.xml file in this repo as reference ;
+
+    <properties>
+        <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
+    </properties>
+    
+    ////////
+    
+        <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin> 
+
+
+7) Add Sonar_Host_URL and Sonar_Token (by generating token on Sonar and saving it as Sonar_Token variable in Gitlab) variables in the related Gitlab project. Then update your Gitlab CI yaml file by pasting Sonar stage as below ;
+
+stages:
+  - build
+  - sonarqube
+
+sonarqube:
+  stage: sonarqube
+  image: maven:3.8.3-openjdk-17
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - mvn --batch-mode verify sonar:sonar --settings ./settings.xml -DskipTests=true -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=b5346_banct-fee-svc_AYdVjZI239qOxhCA8Jyj -Dsonar.qualitygate.wait=true
+  allow_failure: true
+  except:
+    - main
+
+Then run the pipeline in Gitlab pipelines to see if Sonar stage running successfully. Please also see sample pom.xml and Gitlab CI yaml files in this repo as reference.
