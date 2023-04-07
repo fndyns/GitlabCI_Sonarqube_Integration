@@ -1,0 +1,928 @@
+ 1  ls
+    2  vi bitnami_credentials 
+    3  echo bitnami_credentials 
+    4  vi bitnami_credentials 
+    5  ls
+    6  cd stack
+    7  ls
+    8  cd apache2
+    9  ls
+   10  cd bin
+   11  ls
+   12  cd http
+   13  cd ..
+   14  ls
+   15  cd conf
+   16  ls
+   17  sudo vim httpd.conf 
+   18  ls
+   19  sudo vim httpd.conf 
+   20  cd ..
+   21  ls
+   22  cd ..
+   23  ls
+   24  cd apache2
+   25  şs
+   26  ls
+   27  cd conf
+   28  ls
+   29  cd bitnami/
+   30  ls
+   31  sudo vim httpd.conf 
+   32  ls
+   33  cat bitnami
+   34  cat bitnami.conf
+   35  ls
+   36  cat bitnami-ssl.conf 
+   37  pwd
+   38  cd ..
+   39  ls
+   40  sudo vim httpd.conf 
+   41  ls
+   42  cat modsecurity.conf 
+   43  ls
+   44  cd ..
+   45  ls
+   46  cd conf
+   47  ls
+   48  sudo vim httpd.conf 
+   49  cd bitnami/
+   50  ls
+   51  sudo vim httpd.conf 
+   52  ls
+   53  cd ..
+   54  ls
+   55  cd ..
+   56  ls
+   57  cd log
+   58  cd logs
+   59  ls
+   60  pwd
+   61  cd ..
+   62  ls
+   63  cd conf
+   64  ls
+   65  sudo vim httpd.conf 
+   66  cd ..
+   67  ls
+   68  cd sonarqube/
+   69  ls
+   70  cd logs
+   71  ls
+   72  pwd
+   73  cd ..
+   74  ls
+   75  cd ..
+   76  ls
+   77  pwd
+   78  cd apache2
+   79  ls
+   80  cd logs
+   81  ls
+   82  cd /home/bitnami/stack/sonarqube/logs
+   83  ls
+   84  cd ..
+   85  ls
+   86  cd conf
+   87  ls
+   88  cd ..
+   89  ls
+   90  cd conf
+   91  ls
+   92  sudo vim sonar.properties 
+   93  ls
+   94  pwd
+   95  cd ..
+   96  ls
+   97  cd ..
+   98  şs
+   99  ls
+  100  cd apache2
+  101  ls
+  102  cd conf
+  103  ls
+  104  sudo vim httpd.conf 
+  105  ls
+  106  pwd
+  107  cd ..
+  108  cd logs
+  109  ls
+  110  pwd
+  111  cd ..
+  112  ls
+  113  cd conf
+  114  ls
+  115  sudo vim httpd.conf 
+  116  ls
+  117  sudo vim modsecurity.conf 
+  118  ls
+  119  sudo vim httpd.conf 
+  120  ls
+  121  sudo vim httpd.conf 
+  122  ls
+  123  cd bitnami/
+  124  ls
+  125  sudo vim httpd.conf 
+  126  ls
+  127  pwd
+  128  ls
+  129  cd ..
+  130  ls
+  131  cd ..
+  132  ls
+  133  cd bin
+  134  ls
+  135  cd ..
+  136  ls
+  137  cd ..
+  138  ls
+  139  cd sonarqube/
+  140  ls
+  141  cd bin
+  142  ls
+  143  cd linux-x86-64/
+  144  ls
+  145  pwd
+  146  ./sonar.sh stop
+  147  ./sonar.sh force- stop
+  148  ./sonar.sh force-stop
+  149  ./sonar.sh restart
+  150  systemctl restart sonar
+  151  systemctl restart sonar.service
+  152  sudo systemctl restart sonar.service
+  153  sudo vim /etc/systemd/system/sonarqube.service
+  154  whoami
+  155  sudo vim /etc/systemd/system/sonarqube.service
+  156  [2:16 PM] Saddam Zourob
+  157  cat /etc/passwd
+  158  exit
+  159  exitr
+  160  exit
+  161  ls
+  162  sudo systemctl status sonar.service
+  163  sudo systemctl status sonarqube.service
+  164  ls
+  165  cd stack
+  166  ls
+  167  cd apache
+  168  cd ..
+  169  cd apache2
+  170  ls
+  171  cd conf
+  172  ls
+  173  sudo vim httpd.conf 
+  174  sudo systemctl status apache
+  175  sudo systemctl status apache.service
+  176  systemctl list-unit-files
+  177  systemctl list-unit-files | grep apac
+  178  sudo systemctl list-unit-files | grep apac
+  179  sudo systemctl list-unit-files | grep apa
+  180  sudo systemctl list-unit-files | grep apac
+  181  /etc/init.d/apache2 restart
+  182  sudo /etc/init.d/apache2 restart
+  183  cd /etc/init.d/apache2 restart
+  184  cd /etc/init.d/apache2
+  185  which apache2
+  186  which apache
+  187  cd /etc
+  188  cd init.d
+  189  ls
+  190  cd
+  191  cd /etc
+  192  ls
+  193  cd
+  194  ls
+  195  cd stack
+  196  ls
+  197  cd apache2
+  198  ls
+  199  sudo vim /etc/systemd/system/sonarqube.service
+  200  ls
+  201  cd ..
+  202  ls
+  203  cd apache2
+  204  ls
+  205  cd conf
+  206  ls
+  207  cd ..
+  208  ls
+  209  cd ..
+  210  ls
+  211  sudo /opt/bitnami/bncert-tool
+  212  wget -O bncert-linux-x64.run https://downloads.bitnami.com/files/bncert/latest/bncert-linux-x64.run
+  213  sudo wget -O bncert-linux-x64.run https://downloads.bitnami.com/files/bncert/latest/bncert-linux-x64.run
+  214  sudo mkdir /opt/bitnami/bncert
+  215  sudo mv bncert-linux-x64.run /opt/bitnami/bncert/
+  216  sudo chmod +x /opt/bitnami/bncert/bncert-linux-x64.run
+  217  sudo ln -s /opt/bitnami/bncert/bncert-linux-x64.run /opt/bitnami/bncert-tool
+  218  sudo /opt/bitnami/bncert-tool
+  219  cd /opt/bitnami/apache/sbin/nginx
+  220  cd /opt/bitnami/apache/sbin
+  221  cd /opt/bitnami/apache/
+  222  ls
+  223  cd bin
+  224  ls
+  225  sudo vim /opt/bitnami/apache/conf/bitnami/bitnami.conf
+  226  sudo vim /opt/bitnami/apache/conf/bitnami/bitnami-ssl.conf
+  227  ls
+  228  cd ..
+  229  cd /opt/bitnami/apache/conf/vhosts/
+  230  ls
+  231  sudo vim 00_status-vhost.conf 
+  232  cd ..
+  233  ls
+  234  cd bncert-tool
+  235  cd bncert
+  236  ls
+  237  sudo /opt/bitnami/bncert-tool
+  238  cd /bin/sh: 1: /opt/bitnami/apache/sbin
+  239  cd /opt/bitnami/apache/sbin
+  240  cd /opt/bitnami/apache
+  241  ls
+  242  cd conf
+  243  ls
+  244  cd ..
+  245  ls
+  246  cd modules/
+  247  ls
+  248  cd ..
+  249  ls
+  250  cd lib
+  251  ls
+  252  cd ..
+  253  ls
+  254  cd ..
+  255  ls
+  256  cd bncert
+  257  ls
+  258  cd ..
+  259  cat bncert-tool
+  260  cd bncert-tool
+  261  ls
+  262  cd bncert
+  263  ls
+  264  cd bncert-1.1.1-linux-x64.run
+  265  cat bncert-1.1.1-linux-x64.run
+  266  ls
+  267  cat /etc/release
+  268  sudo apt update
+  269  sudo apt install nginx
+  270  ls
+  271  cd ..
+  272  ls
+  273  sudo systemctl status nginx
+  274  ls
+  275  cd ..
+  276  cd
+  277  ls
+  278  cd stack
+  279  ls
+  280  cd /etc
+  281  ls
+  282  cd nginx
+  283  ls
+  284  sudo vim nginx.conf
+  285  ls
+  286  ls -ltr
+  287  cd conf.d
+  288  ls
+  289  cd
+  290  ls
+  291  cd stack
+  292  ls
+  293  cd bncert
+  294  ls
+  295  cd ..
+  296  cd /etc
+  297  ls
+  298  cd /ng
+  299  cd nginx/
+  300  ls
+  301  sudo vim nginx.conf 
+  302  sudo systemctl status nginx
+  303  sudo systemctl restart nginx
+  304  sudo systemctl status nginx
+  305  sudo vim nginx.conf 
+  306  ls
+  307  cd sites-
+  308  cd sites-available/
+  309  ls
+  310  cd def
+  311  cd default
+  312  sudo vim default
+  313  sudo systemctl restart nginx
+  314  sudo systemctl status nginx
+  315  sudo vim default
+  316  sudo systemctl restart nginx
+  317  sudo systemctl status nginx
+  318  sudo vim default
+  319  sudo systemctl restart nginx
+  320  sudo systemctl status nginx
+  321  ls
+  322  cd ..
+  323  ls
+  324  cd
+  325  ls
+  326  cd stack
+  327  ls
+  328  cd sonarqube/
+  329  ls
+  330  cd conf
+  331  ls
+  332  cd ..
+  333  ls
+  334  sudo vim sonar.properties
+  335  cat sonar.properties
+  336  ls
+  337  cd ..
+  338  ls
+  339  cd /etc
+  340  ls
+  341  cd nginx
+  342  ls
+  343  cd sites-available/
+  344  la
+  345  ls
+  346  sudo vim default 
+  347  cd /etc/ssl
+  348  ls
+  349  cd certs
+  350  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  351  sudo snap install --classic certbot
+  352  sudo apt install certbot
+  353  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  354  sudo certbot certonly --standalone --debug -d https://sq.banct-app.com
+  355  sudo ufw allow OpenSSH
+  356  sudo certbot certonly --standalone --debug -d sq.banct-app.com:443
+  357  cd ..
+  358  ls
+  359  cd ..
+  360  cd nginx
+  361  ls
+  362  cd sites-enabled/
+  363  ls
+  364  sudo vim  logger.banct-app.com
+  365  ls
+  366  sudo vim sq.banct-app.com
+  367  sudo cat default 
+  368  ls
+  369  sudo cp default sq.banct-app.com
+  370  sudo vim sq.banct-app.com 
+  371  cd ..
+  372  cd sites-available/
+  373  ls
+  374  cat default 
+  375  vim default 
+  376  sudo vim default 
+  377  cd ..
+  378  ls
+  379  cd sites-enabled/
+  380  ls
+  381  sudo vim sq.banct-app.com 
+  382  ls -ltr
+  383  chmod 777 sq.banct-app.com 
+  384  sudo chmod 777 sq.banct-app.com 
+  385  ls -ltr
+  386  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  387  sudo systemctl restart nginx
+  388  sudo systemctl status nginx
+  389  journalctl -xe nginx
+  390  journalctl -xe
+  391  sudo nginx -t
+  392  sudo vim /etc/nginx/nginx.conf
+  393  ls
+  394  sudo vim /etc/nginx/nginx.conf
+  395  sudo nginx -t
+  396  la
+  397  ls
+  398  sudo vim /etc/nginx/nginx.conf
+  399  sudo cat /etc/nginx/nginx.conf
+  400  sudo vim /etc/nginx/nginx.conf
+  401  sudo nginx -t
+  402  sudo vim /etc/nginx/sites-enabled/sq.banct-app.com
+  403  cd /etc/nginx/sites-enabled/
+  404  ls
+  405  cat sq
+  406  cat sq.banct-app.com 
+  407  sudo vim sq.banct-app.com 
+  408  sudo nginx -t
+  409  sudo systemctl status nginx
+  410  sudo nginx -t
+  411  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  412  sudo certbot certonly --standalone --debug -d sq.banct-app.com/
+  413  cat /var/log/letsencrypt
+  414  sudo cat /var/log/letsencrypt
+  415  sudo cd /var/log/letsencrypt
+  416  cd /var/log/letsencrypt
+  417  cd
+  418  cd /var/log/letsencrypt
+  419  sudo cd /var/log/letsencrypt
+  420  cd /var
+  421  ls
+  422  cd log
+  423  ls
+  424  cd letsencrypt/
+  425  sudo cd letsencrypt/
+  426  sudo cd letsencrypt
+  427  cat letsencrypt/
+  428  sudo cat letsencrypt/
+  429  ls -ltr
+  430  chmod 777 letsencrypt/
+  431  sudo chmod 777 letsencrypt/
+  432  ls -ltr
+  433  cd letsencrypt/
+  434  ls
+  435  cat letsencrypt.log 
+  436  ls
+  437  cd ..
+  438  cd
+  439  ls
+  440  cd stack
+  441  ls
+  442  cd /etc/nginx/
+  443  ls
+  444  cd sites-enabled/
+  445  ls
+  446  cat sq.banct-app.com 
+  447  cat default 
+  448  vim default 
+  449  cd /etc
+  450  ls
+  451  cd letsencrypt/
+  452  ls
+  453  cd keys
+  454  cd ..
+  455  cd /nginx
+  456  cd nginx
+  457  ls
+  458  cd sites-available/
+  459  ls
+  460  cat default 
+  461  ls
+  462  cd ..
+  463  ls
+  464  cd sites-enabled/
+  465  ls
+  466  cat default 
+  467  vim default 
+  468  ls
+  469  sudo vim sq.banct-app.com 
+  470  sudo nginx -t
+  471  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  472  history
+  473  sudo systemctl restart nginx journalctl -xe
+  474  sudo systemctl restart nginx journalctl
+  475  sudo journalctl -xe
+  476  sudo su
+  477  mkdir ~/backups/
+  478  sudo tar -zcvf ~/backups/nginx-8-Sep-2019.tar.gz /etc/nginx/
+  479  sudo apt purge nginx nginx-common nginx-core
+  480  sudo apt remove nginx nginx-common nginx-core
+  481  sudo apt autoremove
+  482  ls -l /etc/nginx/ /usr/share/nginx/
+  483  sudo apt install nginx nginx-common nginx-core
+  484  sudo systemctl status nginx
+  485  sudo su
+  486  ls
+  487  cd /etc
+  488  ls
+  489  cd nginx/
+  490  ls
+  491  cd sites-available/
+  492  ls
+  493  cat defa
+  494  cat default 
+  495  systemctl stop nginx
+  496  systemctl status nginx
+  497  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  498  cat /var/log/letsencrypt
+  499  cd /var/log/letsencrypt
+  500  ls
+  501  cat letsencrypt.log 
+  502  pwd
+  503  ls
+  504  cd
+  505  ls
+  506  cd /etc/letsencrypt/
+  507  ls
+  508  cd accounts/
+  509  ls
+  510  certbot certonly --standalone --debug -d sq.banct-app.com
+  511  sudo su
+  512  cat /etc/resolv.conf
+  513  adduser nginx
+  514  export PATH="$PATH:/sbin:/usr/sbin:usr/local/sbin"
+  515  adduser nginx
+  516  sudo adduser nginx
+  517  usermod -aG sudo ubuntu
+  518  whoami
+  519  usermod -aG sudo bitnami
+  520  sudo usermod -aG sudo bitnami
+  521  ufw app list
+  522  nano ~/.profile
+  523  vim ~/.profile
+  524  sudo ufw status
+  525  sudu ufw enable 
+  526  sudo ufw enable 
+  527  sudo apt-get ufw
+  528  sudo vim /etc/default/ufw
+  529  cd /etc
+  530  ls
+  531  cd default/
+  532  ls
+  533  sudo apt install ufw
+  534  sudo ufw allow ssh
+  535  sudo ufw allow 22
+  536  sudo ufw default allow outgoing
+  537  sudo ufw allow ssh
+  538  sudo ufw allow 22
+  539  sudo ufw enable
+  540  sudo ufw allow OpenSSH
+  541  sudo ufw allow HTTP
+  542  sudo ufw allow   Nginx Full
+  543  sudo ufw allow Nginx Full
+  544  sudo ufw allow "Nginx Full"
+  545  sudo ufw enable
+  546  certbot certonly --standalone --debug -d sq.banct-app.com
+  547  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  548  sudo ufw status
+  549  sudo systemctl daemon-reload
+  550  sudo systemctl disable nginx
+  551  sudo systemctl enable nginx
+  552  sudo systemctl status nginx
+  553  sudousermod -aG sudo bitnami
+  554  sudo usermod -aG sudo bitnami
+  555  ufw app list
+  556  sudo ufw app list
+  557  sudo mkdir -p /var/www/sq.banct-app.com/html
+  558  sudo chown -R $USER:$USER /var/www/sq.banct-app.com/html
+  559  sudo chmod -R 755 /var/www/sq.banct-app.com
+  560  cd /etc/letsencrypt/
+  561  ls
+  562  cat cli.ini
+  563  sudo apt update
+  564  sudo apt upgrade
+  565  sudo apt update
+  566  sudo systemctl daemon-reload
+  567  sudo systemctl status nginx
+  568  sudo systemctl restart nginx
+  569  sudo systemctl restart nginx.service
+  570  systemctl restart nginx.service
+  571  sudo systemctl enable nginx
+  572  sudo systemctl status nginx
+  573  sudo systemctl restart nginx
+  574  journalctl -xe
+  575  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  576  Sudo netstat -tulpn
+  577  sudo netstat -tulpn
+  578  sudo systemctl status nginx
+  579  netstat -nlp | grep nginx
+  580  sudo netstat -nlp | grep nginx
+  581  history | grep remove
+  582  sudo apt remove nginx nginx-common nginx-core
+  583  history | grep install
+  584  sudo apt update
+  585  sudo apt install nginx
+  586  sudo systemctl status nginx
+  587  sudo apt remove nginx nginx-common nginx-core
+  588  sudo apt update
+  589  sudo apt upgrade
+  590  history | grep nginx
+  591  history | grep install
+  592  sudo apt install nginx nginx-common nginx-core
+  593  sudo apt remove nginx nginx-common nginx-core
+  594  $ sudo systemctl status nginx.service 
+  595  ○ nginx.service - A high performance web server and a reverse proxy>
+  596  sudo systemctl status nginx.service 
+  597  sudo apt remove nginx
+  598  sudo apt remove nginx nginx-commons
+  599  $ sudo systemctl status nginx.service
+  600  ○ nginx.service
+  601  sudo systemctl status nginx.service
+  602  sudo apt purge nginx
+  603  sudo apt-get autoremove
+  604  sudo systemctl status nginx.service
+  605  sudo apt remove --purge nginx*
+  606  sudo apt autoremove
+  607  sudo apt update
+  608  sudo apt install nginx
+  609  sudo systemctl status nginx.service
+  610  netstat -nlp | grep nginx
+  611  sudo netstat -nlp | grep nginx
+  612  curl -Ik http://172-31-36-53
+  613  curl -Ik http://172.31.36.53
+  614  dig
+  615  dig A https://sq.banct-app.com/
+  616  dig A https://sq.banct-app.com
+  617  curl -Ik http://172.31.36.53
+  618  certbot certificates
+  619  sudo certbot certificates
+  620  certbot certonly
+  621  sudo certbot certonly
+  622  certbot renew
+  623  sudo certbot renew
+  624  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app
+  625  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  626  sudo apt install python-certbot-nginx
+  627  sudo certbot renew --nginx
+  628  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  629  systemctl stop nginx
+  630  sudo systemctl stop nginx
+  631  sudo systemctl start nginx
+  632  sudo systemctl status nginx
+  633  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  634  sudo systemctl stop nginx
+  635  sudo systemctl stop apache2
+  636  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  637  sudo certbot certificates
+  638  sudo certbot --nginx -d logger.banct-app.com -d sq.banct-app.com
+  639  sudo certbot --nginx -d sq.banct-app.com -d sq.banct-app.com
+  640  sudo certbot certificates
+  641  ls
+  642  sudo ls | grep key
+  643  sudo apt-get install python3-certbot-nginx
+  644  sudo ls | grep key
+  645  sudo certbot certificates
+  646  sudo certbot --nginx -d sq.banct-app.com -d sq.banct-app.com
+  647  sudo apt update
+  648  sudo apt upgrade
+  649  sudo certbot --nginx -d sq.banct-app.com -d sq.banct-app.com
+  650  sudo ufw allow OpenSSH
+  651  sudo ufw allow HTTP
+  652  sudo ufw allow   Nginx Full
+  653  sudo ufw allow Nginx Full
+  654  sudo ufw allow Nginx HTTP
+  655  sudo ufw allow "Nginx HTTP"
+  656  sudo ufw allow "Nginx HTTPS"
+  657  sudo ufw allow "Nginx Full"
+  658  sudo certbot certonly --standalone --debug -d idp.banct-app.com
+  659  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  660  sudo certbot --nginx -d sq.banct-app.com -d sq.banct-app.com
+  661  sudo systemctl status nginx
+  662  sudo systemctl list-unit-files | grep apac
+  663  certbot-auto renew
+  664  sudo certbot renew --nginx
+  665  sudo certbot renew
+  666  touch /etc/ssl/certs/server.crt
+  667  sudo touch /etc/ssl/certs/server.crt
+  668  chmod 777 /etc/ssl/certs/server.crt
+  669  sudo chmod 777 /etc/ssl/certs/server.crt
+  670  sudo certbot --nginx -d sq.banct-app.com -d sq.banct-app.com
+  671  ls
+  672  sudo certbot --nginx -d sq.banct-app.com
+  673  cd /etc/nginx/
+  674  ls
+  675  sudo vim nginx.conf 
+  676  history
+  677  sudo certbot --nginx -d sq.banct-app.com
+  678  sudo vim nginx.conf 
+  679  cd ..
+  680  cat resolv.conf 
+  681  ping eu-west-2.compute.internal
+  682  ping https://eu-west-2.compute.internal
+  683  exit
+  684  sudo su
+  685  touch /etc/ssl/certs/server.crt
+  686  sudo systemctl status nginx
+  687  sudo certbot --nginx -d sq.banct-app.com
+  688  sudo vim /etc/ssl/certs/server.crt
+  689  sudo vim /etc/ssl/certs/server.key
+  690  cat /etc/ssl/certs/server.key
+  691  sudo vim /etc/ssl/certs/server.key
+  692  cat /etc/ssl/certs/server.crt
+  693  sudo vim /etc/ssl/certs/server.crt
+  694  certbot renew 
+  695  sudo certbot renew 
+  696  openssl req -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout server.key -out server.crt
+  697  cd /etc/ssl/certs/
+  698  ls
+  699  cat server.key
+  700  cat server.crt
+  701  ls -ltr | grep server
+  702  chmod 777 server.key
+  703  sudo chmod 777 server.key
+  704  chmod 777 server.key
+  705  ls -ltr | grep server
+  706  rm server.crt
+  707  sudo rm server.crt
+  708  sudo rm server.key
+  709  vim server.key
+  710  ls
+  711  touch server.key
+  712  sudo touch server.key
+  713  ls -ltr | grep server
+  714  sudo vim /etc/ssl/certs/server.crt
+  715  sudo vim /etc/ssl/certs/server.key
+  716  cat /etc/ssl/certs/server.crt
+  717  cat /etc/ssl/certs/server.key
+  718  sudo vim /etc/ssl/certs/server.key
+  719  sudo vim /etc/ssl/certs/server.crt
+  720  ls -ltr | grep server
+  721  chmod 777 server.crt
+  722  sudo chmod 777 server.crt
+  723  sudo chmod 777 server.key
+  724  ls -ltr | grep server
+  725  openssl req -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout server.key -out server.crt
+  726  ls -ltr | grep server
+  727  cat server..ke
+  728  cat server.key
+  729  cat server.crt
+  730  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app
+  731  dig A sq.banct-app.com
+  732  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  733  dig A sq.banct-app.com
+  734  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  735  sudo systemctl restart nginx
+  736  sudo systemctl status nginx
+  737  sudo systemctl enable nginx
+  738  sudo systemctl status nginx
+  739  sudo systemctl restart nginx
+  740  sudo systemctl reload nginx
+  741  sudo systemctl status nginx
+  742  sudo systemctl status nginx.service
+  743  journalctl -xe
+  744  sudo systemctl restart nginx.service
+  745  journalctl -xe
+  746  sudo service apache2 status
+  747  sudo service nginx status
+  748  sudo lsof -i:80
+  749  sudo apt-get install lsof
+  750  sudo lsof -i:80
+  751  sudo fuser -k 80/tcp
+  752  sudo lsof -i:80
+  753  sudo service nginx status
+  754  sudo systemctl restart nginx.service
+  755  sudo lsof -i:80
+  756  lsof -i:80
+  757  sudo fuser -k 80/tcp
+  758  sudo systemctl restart nginx
+  759  sudo rm /etc/nginx/sites-enabled/default
+  760  sudo service nginx restart
+  761  lsof -i:80
+  762  sudo lsof -i:80
+  763  sudo systemctl disable nginx
+  764  sudo systemctl enable nginx
+  765  sudo systemctl daemon-reload
+  766  sudo apt update
+  767  sudo apt upgrade
+  768  sudo service nginx status
+  769  sudo service nginx restart
+  770  journalctl -xe
+  771  sudo systemctl reload nginx
+  772  sudo service nginx status
+  773  sudo apt update
+  774  sudo apt install -y git
+  775  git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
+  776  sudo git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
+  777  cd ubuntu-wsl2-systemd-script/
+  778  bash ubuntu-wsl2-systemd-script.sh
+  779  ls
+  780  rm ubuntu-wsl2-systemd-script.sh 
+  781  ls
+  782  sudo rm ubuntu-wsl2-systemd-script.sh 
+  783  ls
+  784  sudo lsof -i:80
+  785  lsof -i:80
+  786  sudo service nginx restart
+  787  service nginx restart
+  788  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  789  journalctl -xe
+  790  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  791  Sudo service apache2 stop.sudo.systemctl restart nginx.
+  792  sudo service apache2 stop.sudo.systemctl restart nginx.
+  793  sudo systemctl list-unit-files | grep apac
+  794  sudo.fuser -k 80/tcp sudo.systemctl restart nginx
+  795  sudo fuser -k 80/tcp sudo.systemctl restart nginx
+  796  sudo fuser -k 80/tcp sudo systemctl restart nginx
+  797  sudo fuser -k 80/tcp
+  798  sudo systemctl restart nginx
+  799  cd /etc/nginx/
+  800  ls
+  801  cat nginx.conf 
+  802  ls
+  803  sudo service nginx status
+  804  journalctl -xe
+  805  ls
+  806  cd /var/log/nginx/
+  807  ls
+  808  cat error.log 
+  809  sudo service nginx status
+  810  sudo service nginx stop
+  811  sudo service nginx status
+  812  lsof -i:80
+  813  cd
+  814  pwd
+  815  cd certbot
+  816  mkdir certbotworkspace
+  817  cd certbotworkspace/
+  818  ls
+  819  sudo certbot certonly --standalone --debug -d sq.banct-app.com
+  820  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  821  lsof -i:80
+  822  sudo lsof -i:80
+  823  cd /var/log/letsencrypt
+  824  ls
+  825  cat letsencrypt.log 
+  826  sudo service nginx status
+  827  sudo systemctl disable nginx
+  828  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  829  exit
+  830  sudo
+  831  ll
+  832  service ngnix status
+  833  systemctl ngnix status
+  834  systemctl nginx status
+  835  cd /etc/
+  836  ll
+  837  ls -ls 
+  838  cd nginx/
+  839  ll
+  840  ls -ls
+  841  service nginx status
+  842  ll
+  843  ls -ls
+  844  cd sites-available/
+  845  ls -ls
+  846  nano default 
+  847  ls -ls
+  848  cd ..
+  849  ls -ls
+  850  nano nginx.conf 
+  851  sudo nano nginx.conf 
+  852  ls -ls
+  853  cd sites-enabled/
+  854  ll
+  855  ls -ls
+  856  nano sq.banct-app.com 
+  857  cat sq.banct-app.com 
+  858  service nginx restart
+  859  sudo service nginx restart
+  860  ls -ls
+  861  nano sq.banct-app.com 
+  862  cd ..
+  863  ls -ls
+  864  sudo -i
+  865  history
+  866  journalctl -xe
+  867  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  868  cd /var/log/letsencrypt
+  869  cd /var/log/nginx/
+  870  ls
+  871  cat error.log 
+  872  cd
+  873  ls
+  874  cd certbotworkspace/
+  875  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  876  cd /var/log/nginx/
+  877  cat error.log 
+  878  cd /etc/letsencrypt/live
+  879  cd /etc/letsencrypt/
+  880  ls
+  881  cd
+  882  ls
+  883  cd certbotworkspace/
+  884  ls
+  885  sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+  886  cd
+  887  cd stack
+  888  ls
+  889  cd
+  890  ls
+  891  ls -ltr
+  892  cd /etc/n
+  893  cd /etc/nginx/
+  894  ls
+  895  cd sites-enabled/
+  896  ls
+  897  sudo vim sq.banct-app.com 
+  898  cd ..
+  899  ls
+  900  cat nginx.conf 
+  901  ls
+  902  cd sites-enabled/
+  903  ls
+  904  sudo vim sq
+  905  sudo vim sq.banct-app.com 
+  906  cat sq.banct-app.com 
+  907  ls -ltr
+  908  cat /etc/os-release
+  909  sudo systemctl status nginx
+  910  history
+  911  sudo systemctl status nginx
+  912  cd /opt/bitnami/sonarqube/conf
+  913  cat sonar.properties 
+  914  psql -U bn_sonarqube -d bitnami_sonarqube
+  915  cat sonar.properties | grep bn_son 
+  916  cat sonar.properties | grep pass
+  917  psql -U bn_sonarqube -d bitnami_sonarqube
+  918  pwd
+  919  ls
+  920  cd /etc/nginx/
+  921  ls
+  922  cd sites-enabled/
+  923  ls
+  924  cat sq.banct-app.com 
+  925  pwd
+  926  cat sq.banct-app.com 
+  927  vim sq.banct-app.com 
+  928  history
