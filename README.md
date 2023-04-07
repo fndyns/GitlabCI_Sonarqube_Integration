@@ -19,11 +19,11 @@ CAA : Certificate Authorization Authority. When we add CAA record for any domain
  
  ** UFW should be enabled for all linux machines. Whenever we use certbot, ufw firewall must be enabled.
  
- sudo ufw status
- sudo ufw enabled
- sudo certbot --nginx -d sq.banct-app.com : When we run this command. It failed as "Some challenges have failed". After checking for a while, we realise that the CAA records added to AWS for the main domain banct-app.com and for subdomains *banct-app.com  on Route 53 on AWS were preventing to issuancae the certificate for third party letsencrypt. So we needed to remove CAA records on AWS Route 53. After removing them, we tried to rerun the certbot command. This commands creating everything automatically. I havent added any pem file manually. It is creating everything. Now when certbot command run successfully, I run the renewal command.
+  >sudo ufw status
+  >sudo ufw enabled
+  >sudo certbot --nginx -d sq.banct-app.com : When we run this command. It failed as "Some challenges have failed". After checking for a while, we realise that the CAA records added to AWS for the main domain banct-app.com and for subdomains *banct-app.com  on Route 53 on AWS were preventing to issuancae the certificate for third party letsencrypt. So we needed to remove CAA records on AWS Route 53. After removing them, we tried to rerun the certbot command. This commands creating everything automatically. I havent added any pem file manually. It is creating everything. Now when certbot command run successfully, I run the renewal command.
  
- sudo certbot renew --dry-run
+ >sudo certbot renew --dry-run
  
  I want to add a cronjob renew dry run then will check . That will set the cronjob for the renewal. Because this certificate all will expire every three months and this cronjob will automatically renewal. So we dont need to renew the certificate manually. It will be done by Cronjob automatically every 3 months when we run "sudo certbot renew --dry-run"
  
@@ -59,24 +59,46 @@ Allowing any port on UFW on Linux machines, we dont need to do any restart proce
 # Gitlab CI - Sonar Integrasyonu İçin Sırasıyla Yapılanlar ;
 
 1) Once Sonarqube Instance ı ayağa kaldırıldı. Sonar EC2 Security Groups içerisinden hem HTTP hem HTTPs trafiğine izin verdik. Amacımız sonar web sitesine HTTP ile gidildiğinde HTTPs e yönlendirmesi (nginx configde http traffik için https e kalıcı yönlendirme yapıldı) ve HTTPs içerisindede bağlantının güvenli olması için EC2 makinası içerisine SSL sertifikası yüklenmesi 
+
 2) Sonra Sonar için https sertifikasını enable etmek için Sonar önüne nginx konumlandırdık. Bunun için önce instance a nginx install ettik. Sonra da buna https i enable edebilmek için SSL sertifikası install ettik. SSL sertifika tanımlama için şu link takip edildi https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-11
-4)sudo apt install nginx
-sudo apt-get install python3-certbot-nginx
-lsof -i:80
-sudo fuser -k 80/tcp
-sudo rm /etc/nginx/sites-enabled/default (not sure about this command)
-sudo service nginx restart
-sudo systemctl daemon-reload
-sudo apt update
-sudo apt upgrade
-sudo systemctl list-unit-files | grep apac
-cd /var/log/nginx/
-cat error.log
-sudo systemctl disable nginx
-cd /var/log/letsencrypt
-cat letsencrypt.log 
-sudo service nginx status
-cd /etc/nginx/sites-available/
+
+3) 
+  >sudo apt install nginx
+  >sudo apt-get install python3-certbot-nginx
+  >lsof -i:80
+  >sudo fuser -k 80/tcp
+  >sudo rm /etc/nginx/sites-enabled/default (not sure about this command)
+  >sudo service nginx restart
+  >sudo systemctl daemon-reload
+  >sudo apt update
+  >sudo apt upgrade
+  >sudo systemctl list-unit-files | grep apac
+  >cd /var/log/nginx/
+  >cat error.log
+  >sudo systemctl disable nginx
+  >cd /var/log/letsencrypt
+  >cat letsencrypt.log 
+  >sudo service nginx status
+  >cd /etc/nginx/sites-available/
+  
 Bu directory de ls dediğimizde default dosyası sanırım silinmiş olmalı ve hangi domain üzerinde çalışıyorsak o domain isminde bir dosya olmalı. Şuanda bizde xx adında dosya var ve dosyanın cerbot komutu koşmadan önceki hali bu repodaki  InıtalStatusofNginx file.png dosyasında mevcut.Dosyanın  certbot komutu koştuktan sonraki halide LatestStatusofNginx file.png dosyasında mevcut. Yani biz letsencrpt ile sertifika oluşturduğumuzda sertifikayı oluşturma pemleri oluşturma ve nginx e bunu tanıtma gibi tüm işlemleri letsencrypt yapıyor (fullchain pem gibi tüm dosyalar otomatik oluşturuluyor certbot komutu ile)
-sudo certbot certonly --standalone --debug -d sq.banct-app.com
-sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+>sudo certbot certonly --standalone --debug -d sq.banct-app.com
+>sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
+
+4) Then, you should be seeing that Sonar Web GUI link has Secure Connection by checking website. Then try to login via admin/admin If you can not login via admin/admin, follow the steps below to reset the password
+
+
+     Firstly, connect to Sonar EC2 Instance on AWS via ssh and connect Sonar DB. To find Sonar DB and password please open the file below and see jdbc username and password ;
+
+     >cd /opt/bitnami/sonarqube/conf
+     >cat sonar.properties 
+
+     sonar.jdbc.username=bn_sonarqube
+     sonar.jdbc.password=eaee23ce74b4c8bcccca3d444a275b01e8a0906eb5526edcca729e5fb841195c
+
+     >psql -U bn_sonarqube -d bitnami_sonarqube
+     >update users set crypted_password='100000$t2h8AtNs1AlCHuLobDjHQTn9XppwTIx88UjqUm4s8RsfTuXQHSd/fpFexAnewwPsO6jGFQUv/24DnO55hY6Xew==', salt='k9x9eN127/3e/hf38iNiKwVfaVk=', hash_method='PBKDF2', reset_password='true', user_local='true', active='true' where login='admin';
+
+     You need to connect sonar db and run the query above. After that you will be seeing output as "UPDATE"
+
+     After that go to Sonarqube GUI and try to login via admin/admin, it will ask you to change the initial password
