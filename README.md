@@ -145,4 +145,4 @@ sonarqube:
   except:
     - main
 
-Then run the pipeline in Gitlab pipelines to see if Sonar stage running successfully. Please also see sample pom.xml and Gitlab CI yaml files in this repo as reference.
+Then run the pipeline in Gitlab pipelines to see if Sonar stage running successfully. Please also see sample pom.xml and Gitlab CI yaml files in this repo as reference. After pipeline running successfully, you should be seeing Code coverage results of the project on the main page of Sonar Web GUI 
