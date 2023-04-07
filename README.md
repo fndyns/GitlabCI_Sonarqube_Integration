@@ -5,11 +5,6 @@ Sonarqube is a server client architecture. We need to deploy the first in order 
 We need token (endpoint of the sonar qube)
 Sonarqube un gitlabda ki tüm repoları görebilmesi için Sonarqube da her bir proje başına sırayla token oluşturuyoruz. Yani Sonarda "create project" diyerek ve oradaki adımları sırayla takip ederek herbir proje için Gitlab Pipeline ını Sonarqube e bağlamış oluyoruz. 
 
-Gitlab CI - Sonar Integrasyonu İçin Sırasıyla Yapılanlar ;
-
-1) Once Sonarqube Instance ı ayağa kaldırıldı.
-2) Sonra Sonar için https sertifikasını enable etmek için Sonar önüne nginx konumlandırdık. Sonar için Security groupda hem http hem https e izin verildi. Sonra nginx configlerinde http traffik için https e kalıcı yönlendirme yapıldı.
-3)Sonra Sonar instance içerisine nginx install ettim. Sonra https enable etmek için şu link takip edildi https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-11
 
 
 # CAA process
@@ -61,3 +56,27 @@ Allowing any port on UFW on Linux machines, we dont need to do any restart proce
 ** CAA is Certificate Authorited Authority. When we add CAA record  for any domain, we are authorizing that party for the SSL. When we remove CAA record for *.banct-app.com and for banct-app.com, SSL successfully installed by Letscencrypt and after that, we have created certificated via certbot.
 
 
+# Gitlab CI - Sonar Integrasyonu İçin Sırasıyla Yapılanlar ;
+
+1) Once Sonarqube Instance ı ayağa kaldırıldı. Sonar EC2 Security Groups içerisinden hem HTTP hem HTTPs trafiğine izin verdik. Amacımız sonar web sitesine HTTP ile gidildiğinde HTTPs e yönlendirmesi (nginx configde http traffik için https e kalıcı yönlendirme yapıldı) ve HTTPs içerisindede bağlantının güvenli olması için EC2 makinası içerisine SSL sertifikası yüklenmesi 
+2) Sonra Sonar için https sertifikasını enable etmek için Sonar önüne nginx konumlandırdık. Bunun için önce instance a nginx install ettik. Sonra da buna https i enable edebilmek için SSL sertifikası install ettik. SSL sertifika tanımlama için şu link takip edildi https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-11
+4)sudo apt install nginx
+sudo apt-get install python3-certbot-nginx
+lsof -i:80
+sudo fuser -k 80/tcp
+sudo rm /etc/nginx/sites-enabled/default (not sure about this command)
+sudo service nginx restart
+sudo systemctl daemon-reload
+sudo apt update
+sudo apt upgrade
+sudo systemctl list-unit-files | grep apac
+cd /var/log/nginx/
+cat error.log
+sudo systemctl disable nginx
+cd /var/log/letsencrypt
+cat letsencrypt.log 
+sudo service nginx status
+cd /etc/nginx/sites-available/
+Bu directory de ls dediğimizde default dosyası sanırım silinmiş olmalı ve hangi domain üzerinde çalışıyorsak o domain isminde bir dosya olmalı. Şuanda bizde xx adında dosya var ve dosyanın cerbot komutu koşmadan önceki hali bu repodaki  InıtalStatusofNginx file.png dosyasında mevcut.Dosyanın  certbot komutu koştuktan sonraki halide LatestStatusofNginx file.png dosyasında mevcut. Yani biz letsencrpt ile sertifika oluşturduğumuzda sertifikayı oluşturma pemleri oluşturma ve nginx e bunu tanıtma gibi tüm işlemleri letsencrypt yapıyor (fullchain pem gibi tüm dosyalar otomatik oluşturuluyor certbot komutu ile)
+sudo certbot certonly --standalone --debug -d sq.banct-app.com
+sudo certbot certonly --standalone --preferred-challenges http -d sq.banct-app.com
